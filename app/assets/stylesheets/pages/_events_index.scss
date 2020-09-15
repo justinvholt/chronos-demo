@@ -1,0 +1,45 @@
+.demurrage-sum {
+  width: 100%;
+}
+
+.demurrage-rate {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.double-underline {
+  border-bottom: 2px double;
+}
+
+.events {
+  &__voyage-details {
+    background-color: #fff;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 0.3rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  &__events-table {
+    background-color: #fff;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 0.3rem;
+    margin-bottom: 3rem;
+  }
+
+  &__demurrage-summary {
+    background-color: #fff;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 0.3rem;
+  }
+  &__documents-button {
+    width: 8.5rem;
+  }
+}
+
+.outset {
+  padding: 20px;
+  border-style: outset;
+}

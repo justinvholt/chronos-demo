@@ -1,0 +1,65 @@
+<!-- Fixed navbar -->
+<div class="container-fluid px-6">
+<nav class="navbar navbar-expand-lg navbar-light custom-col">
+  <%= link_to root_path, class: "logo-url" do %>
+
+    <%= image_tag("hourglass_logo.png", { id: "logo", class: "navbar-brand d-inline align-middle", alt: "Logo", style: "width: 60; height: 60px" } ) %>
+
+    <span class="navbar-brand font-weight-bold logo-col d-inline align-middle" id="navbar-title">CHRONOS</span>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto pl-4">
+      <li class="nav-item active pl-5">
+        <%= link_to "/fixtures", class: "nav-link" do %>
+          Fixtures <span class="sr-only">(current)</span>
+        <% end %>
+      </li>
+      <li class="nav-item pl-5">
+        <a class="nav-link cs-link">COA</a>
+<!--         For future reference when COA model is created
+        <%= link_to "***coa_path***", class: "nav-link" do %>
+          COA
+        <% end %> -->
+      </li>
+      <li class="nav-item pl-5">
+        <%= link_to('Clauses', clauses_path, class: "nav-link") %>
+      </li>
+      <li class="nav-item pl-5">
+<!--         For future reference when Data model is created
+        <%= link_to "***data_path***", class: "nav-link" do %>
+          Data
+        <% end %> -->
+        <a class="nav-link cs-link">Data</a>
+      </li>
+
+      <li class="nav-item dropdown pl-5">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Settings
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fa fa-sign-out dropdown-item"><%= t(".sign_out", default: "Log out") %></i>
+          <% end %>
+        </div>
+
+        <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+            <%#= link_to "#" do %>
+              <i class="fa fa-cog dropdown-item"> <%= t(".settings", default: "Settings") %></i>
+            <%# end %>
+            <%#= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fa fa-sign-out dropdown-item"><%= t(".sign_out", default: "Log out") %></i>
+            <%# end %>
+         </div> -->
+      </li>
+    </ul>
+  </div>
+</nav>
+</div>

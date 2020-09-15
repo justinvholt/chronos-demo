@@ -1,0 +1,19 @@
+#site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+#wrap {
+  flex: 1;
+}
+
+.custom-footer {
+  background-color: $dark-gray;
+  color: white !important;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  border-top: 2px solid $bright-blue;
+}

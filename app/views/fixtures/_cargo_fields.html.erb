@@ -1,0 +1,38 @@
+<tr>
+  <td>
+    <%= f.input :"#{prefix}_port",
+                  input_html: {readonly: true, class: "form-control-sm edit-input"},
+                  label: false,
+                  required: true %>
+  </td>
+  <td>
+    <%= f.input :"#{prefix}_terminal",
+                  input_html: {readonly: true, class: "form-control-sm edit-input"},
+                  label: false,
+                  required: true %>
+  </td>
+  <td>
+    <%= f.input :"#{prefix}_berth",
+                  input_html: {readonly: true, class: "form-control-sm edit-input"},
+                  label: false,
+                  required: true %>
+  </td>
+  <td>
+    <%= f.input :obl,
+                  input_html: {readonly: true, class: "form-control-sm edit-input"},
+                  label: false,
+                  required: true, disabled: prefix.eql?('disch') %>
+  </td>
+  <td>
+    <%= f.input :name,
+                input_html: {readonly: true, class: "form-control-sm edit-input"},
+                label: false,
+                required: true, disabled: prefix.eql?('disch') %>
+  </td>
+  <td>
+    <%= f.input :quantity_mts,
+                input_html: {readonly: true, class: "form-control-sm edit-input"},
+                label: false,
+                required: true, disabled: prefix.eql?('disch') %>
+  </td>
+</tr>

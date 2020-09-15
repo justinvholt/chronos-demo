@@ -1,0 +1,94 @@
+<div class="row">
+  <div class='col-md-2'>
+    <%= f.input :reference_no, as: :fake,
+                label: "Reference No.",
+                placeholder: @fixture.reference_no %>
+  </div>
+  <div class="col-md-2">
+    <%= f.input :voyage_number, as: :fake,
+                label: "Voyage No.",
+                placeholder: @fixture.voyage_number.to_s %>
+  </div>
+
+    <% @clause_group = @fixture.clause_group %>
+    <% @join = ClauseGroupJoin.where(clause_group: @clause_group).first %>
+    <% @cp_form = @join.clause.cp_form %>
+
+  <div class="col-md-3">
+    <%= f.input :clause_group, as: :fake,
+                label: "CP Form",
+                placeholder: @cp_form %>
+  </div>
+</div>
+
+<div class="row">
+  <div class='col-md-2'>
+    <%= f.input :vessel_name, as: :fake,
+                label: "Vessel Name",
+                placeholder: @fixture.vessel_name %>
+  </div>
+  <div class="col-md-2">
+    <%= f.input :charterer, as: :fake,
+                label: "Charterer",
+                placeholder: @fixture.charterer %>
+  </div>
+
+  <div class="col-md-3">
+    <%= f.input :contract_type, as: :fake,
+                label: "Contract Type",
+                placeholder: "SPOT"%>
+  </div>
+  <div class="col-md-4 mt-3">
+    <%= link_to run_chronos_fixture_events_path, method: :post, class: "btn", id: "hover-btn" do %>
+      <div class="svg-wrapper">
+        <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+          <rect class="shape-chronos" height="60" width="320" />
+          <div class="hover-text">RUN CHRONOS</div>
+        </svg>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    <%= f.input :vessel_dwt, as: :fake,
+                label: "Vessel Capacity",
+                placeholder: "35 000 mts" %>
+  </div>
+
+  <div class="col-md-2">
+    <%= f.input :demurrage_rate, as: :fake,
+                label: "Demurrage Rate",
+                placeholder: number_to_currency(@fixture.demurrage_rate, precision: 0, delimiter: ' ', unit: "USD/day", format: "%n %u") %>
+  </div>
+
+  <div class="col-md-3">
+    <%= f.input :contract_terms, as: :fake,
+                label: "Contract Terms",
+                placeholder: @clause_group.name %>
+  </div>
+</div>
+
+<% @total_cargo = 0 %>
+<% FixtureCargo.where(fixture: @fixture).each {|cargo| @total_cargo += cargo.quantity_mts } %>
+
+<div class="row">
+  <div class="col-md-2">
+    <%= f.input :total_cargo_qty, as: :fake,
+                label: "Total Cargo",
+                placeholder: @total_cargo.to_s + " mts" %>
+  </div>
+  <div class="col-md-2">
+    <%= f.input :allowed_laytime, as: :fake,
+                label: "Allowed Laytime",
+                placeholder: @fixture.allowed_laytime.to_s + " hours total" %>
+  </div>
+  <div class="col-md-3">
+    <%= f.input :reversable, as: :fake,
+                label: "Reversible",
+                placeholder: "yes" %>
+  </div>
+</div>
+

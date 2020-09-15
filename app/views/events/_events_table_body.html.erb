@@ -1,0 +1,17 @@
+<thead>
+  <tr>
+    <th style="width: 18%">Title</th>
+    <th style="width: 4%" class="obl">Obl</th>
+    <th style="width: 6%">Date</th>
+    <th style="width: 8%">Time</th>
+    <th style="width: 12%">Counting</th>
+    <th style="width: 5%">Laytime</th>
+    <th style="width: 25%">Comments</th>
+    <th style="width: 10%"></th>
+  </tr>
+</thead>
+<tbody>
+  <% events.each do |event| %>
+    <%= render "event_row", event: event %>
+  <% end %>
+</tbody>
