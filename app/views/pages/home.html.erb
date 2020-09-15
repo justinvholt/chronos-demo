@@ -1,6 +1,7 @@
 <div class="home-container">
+  <% if false %>
   <div class="position-absolute mt-2 mr-3 hamburger">
-
+ 
     <!-- Button trigger modal
     <button type="button" class="btn btn-primary position-absolute mt-2 mr-3 hamburger" data-toggle="modal" data-target="#exampleModalCenter">
       <i class="fa fa-bars fa-1x"></i>
@@ -41,14 +42,14 @@
         </div>
       </div>
     </div>
-
+  <% end %>
 
   <div class="banner">
     <div class="banner-content">
       <%= image_tag("hourglass.jpeg", class: "banner-watermark") %>
       <h1>CHRONOS</h1>
       <p>Fully automated laytime management system</p>
-      <%= link_to definitions_path do %>
+      <%= link_to fixtures_path do %>
         <%= render "shared/blob_button" %>
       <% end %>
     </div>
